@@ -24,6 +24,11 @@ int main() {
 	kml_trns.KMLNewValue(coord1);
 	kml_trns.KMLNewValue(coord2);
 	kml_trns.KMLNewValue(coord3);
+
+	double c[3] = { 10,30,120 };
+	double c1[3] = { 30,10,120 };
+	kml_trns.KML_ops_point(0, c);
+	kml_trns.KML_ops_point(0, c1);
 	
 	vector<vector<double>> vec_coord;
 	vec_coord = parser("pyt.kml");

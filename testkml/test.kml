@@ -10,5 +10,21 @@
         </coordinates>
       </LineString>
     </Placemark>
+    <Placemark>
+      <name>Waypoint0</name>
+      <Point>
+        <coordinates>
+          30,10,120
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Waypoint0</name>
+      <Point>
+        <coordinates>
+          10,30,120
+        </coordinates>
+      </Point>
+    </Placemark>
   </Document>
 </kml>

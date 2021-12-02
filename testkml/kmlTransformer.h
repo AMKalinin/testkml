@@ -52,6 +52,25 @@ class KML_Transformer
 		write.write(xml.c_str(), xml.size());
 		write.close();
 	};
+	public: void KML_ops_point(int waypoint_num, double input[3])
+	{
+		CoordinatesPtr coordinata = factory->CreateCoordinates();
+		PointPtr point = factory->CreatePoint();
+		PlacemarkPtr placemark1 = factory->CreatePlacemark();
+
+		coordinata->add_latlngalt(input[0], input[1], input[2]);
+
+		point->set_coordinates(coordinata);  // point takes ownership
+		placemark1->set_name("Waypoint" + std::to_string(waypoint_num));
+		placemark1->set_geometry(point);  // placemark takes ownership
+		document->add_feature(placemark1);
+
+		xml = kmldom::SerializePretty(kml);
+
+		write.open(filename.c_str(), std::ios::out);
+		write.write(xml.c_str(), xml.size());
+		write.close();
+	};
 };
 
 
@@ -77,9 +96,4 @@ vector<vector<double>> parser(std::string filename)
 		vec_coord.push_back({ vec.get_longitude(), vec.get_latitude(), vec.get_altitude() });
 	}
 	return vec_coord;
-};
-
-class KML_Parser 
-{
-	protected: std::string filename;
 };
