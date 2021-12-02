@@ -1,0 +1,14 @@
+<kml>
+  <Document>
+    <Placemark>
+      <LineString>
+        <coordinates>
+          15,10,120
+          14,11,120
+          13,12,120
+          10,10,120
+        </coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>
